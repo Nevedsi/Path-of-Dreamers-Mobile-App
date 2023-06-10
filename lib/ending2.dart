@@ -1,0 +1,91 @@
+import 'package:flutter/material.dart';
+import 'hal_utama.dart';
+import 'halaman1.dart';
+import 'path_of_dreamers.dart';
+
+void main() {
+  runApp(new MaterialApp(
+    title: "Path of Dreamers",
+    home: new EndingDua(),
+    debugShowCheckedModeBanner: false,
+  ));
+}
+
+class EndingDua extends StatefulWidget {
+  const EndingDua({Key? key}) : super(key: key);
+
+  @override
+  _EndingDua createState() => _EndingDua();
+}
+
+class _EndingDua extends State<EndingDua> {
+  @override
+  Widget build(BuildContext context) {
+    final ButtonStyle style = ElevatedButton.styleFrom(
+      textStyle: const TextStyle(fontSize: 20, color: Colors.white),
+      fixedSize: const Size(100, 30),
+      primary: Colors.black,
+    );
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFF3A3A3A),
+        title: Text(
+          'Gunung Abadi',
+          style:
+              new TextStyle(fontSize: 24.0, color: Colors.white, height: 1.2),
+        ),
+      ),
+      body: new Center(
+        child: new ListView(
+          children: <Widget>[
+            new Padding(
+              padding: new EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(30.0, 10.0, 50.0, 20.0),
+              child: new Text(
+                "Ending 2: Kau Tidak Bisa Lari Dari Kematian",
+                style: new TextStyle(
+                    fontSize: 25.0, color: Colors.black, height: 1.2),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(30.0, 10.0, 30.0, 30.0),
+              child: new Text(
+                "Kau memutuskan untuk meminum mata air tersebut sebanyak-banyaknya hingga hampir muntah. Kau juga sebanyak-banyaknya membawa mata air tersebut untuk diteliti dan dikonsumsi sendiri. Setelah perjalanan tersebut, kau mengkonsumsi mata air tersebut setiap hari. \n\nPada saat diteliti, air tersebut hanyalah air biasa. Para peneliti mempunyai hipotesis bahwa efek umur panjang dan penyembuhan dapat berfnngsi jika dikonsumsi secara langsung di lokasi. Pada saat stok mata airmu sudah menipis, kau dan beberapa peneliti pergi ke lokasi mata air, tetapi mata air tersebut hilang tanpa jejak secara misterius. Desa yang ditinggali oleh suku tersebut juga menghilang tanpa jejak. \n\nBeberapa bulan kemudian kau pun meninggal dalam keadaan yang misterius.",
+                style: new TextStyle(
+                    fontSize: 14.0, color: Colors.black, height: 1.2),
+              ),
+            ),
+            SizedBox(height: 10),
+            new Padding(
+              padding: new EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0),
+            ),
+            ElevatedButton(
+              style: style,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HalamanSatu()),
+                );
+              },
+              child: const Text('Kembali ke awal'),
+            ),
+            const SizedBox(height: 30),
+            ElevatedButton(
+              style: style,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Home()),
+                );
+              },
+              child: const Text('Kembali ke halaman utama'),
+            ),
+            const SizedBox(height: 30),
+          ],
+        ),
+      ),
+    );
+  }
+}
